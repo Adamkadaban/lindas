@@ -38,6 +38,7 @@ printf ${BLUE}"Linux Defense Awesome Script"${NC}
 
 who
 
+# look at sshd config. who can log in?
 
 # print authorized keys
 
@@ -58,6 +59,10 @@ fi
 cat /etc/passwd | grep "sh$"
 
 # print sudoers file
+
+# print files modified in the last hour
+find / -xdev -mmin -60 -ls 2> /dev/null
+
 
 # print path (and look for unexpected paths) and maybe for bins in those paths
 
@@ -160,6 +165,11 @@ while IFS= read -r binary; do
 done <<< "$SUID_BINARIES"
 
 # print suspicious binaries (how do we do this?)
+
+# print all services
+
+find /etc/systemd/system -name "*.service" -exec cat {} + | grep -E "ExecStart|Description" | sed "s/Description/\nDescription/g" | cut -d "=" -f2 
+
 
 # look for orphaned filed
 
