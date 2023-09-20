@@ -148,6 +148,7 @@ SAFE_SUID_BINARIES=(
 	"/usr/bin/chfn"
 	"/usr/bin/chage"
 	"/usr/sbin/mount.nfs"
+    "/usr/sbin/mount.cifs"
 
 )
 
