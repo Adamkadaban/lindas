@@ -140,6 +140,7 @@ SAFE_SUID_BINARIES=(
 	"/usr/bin/sudo"
 	"/usr/bin/passwd"
 	"/usr/bin/crontab"
+    "/usr/bin/at"
 	"/usr/sbin/grub2-set-bootflag"
 	"/usr/sbin/pam_timestamp_check"
 	"/usr/sbin/unix_chkpwd"
